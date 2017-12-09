@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="my-form"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+function barChart() {
+
+  var MarketData = require('barchart-market-data-api');
+
+var md = new MarketData(__YOUR_API_KEY__);
+md.getHistory('IBM').then(function (history) {
+  console.log('History data:', history);
+});
+md.getQuote('IBM').then(function (quotes) {
+  console.log('Price data:', quotes);
+});
+
+}
+</script>
+
+</html>
